@@ -90,7 +90,7 @@ export class Ky {
 
 				const awaitedResult = await result;
 				const response = awaitedResult.clone();
-
+				awaitedResult.body?.cancel();
 				if (type === 'json') {
 					if (response.status === 204) {
 						return '';
